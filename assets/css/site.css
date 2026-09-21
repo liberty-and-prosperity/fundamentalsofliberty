@@ -1,0 +1,312 @@
+/* ==========================================================
+   Fundamentals of Liberty: site styles
+   Colors and fonts are set once, in the :root block below.
+   The gold (#AA9B55) is the background color the author chose for
+   the original site in January 2011.
+   ========================================================== */
+
+@font-face {
+  font-family: "Libre Caslon Text";
+  src: url("../fonts/libre-caslon-text-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  src: url("../fonts/libre-caslon-text-latin-400-italic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Libre Caslon Text";
+  src: url("../fonts/libre-caslon-text-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Libre Caslon Display";
+  src: url("../fonts/libre-caslon-display-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+:root {
+  --gold: #AA9B55;        /* the author's color */
+  --gold-deep: #6F6431;   /* rules and numbers on paper */
+  --gold-wash: #F1EDDC;   /* family note background */
+  --paper: #FFFDF7;
+  --ink: #231F17;
+  --ink-soft: #564F40;
+  --link: #8C1C13;        /* the red of the original links, darkened for reading */
+
+  --text: "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --display: "Libre Caslon Display", "Libre Caslon Text", "Palatino Linotype", Palatino, Georgia, serif;
+
+  --measure: 37rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 40rem) {
+  body { font-size: 1.1875rem; }
+}
+
+/* ---------- Links and focus ---------- */
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  background: var(--gold);
+  color: var(--ink);
+}
+.masthead-inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.75rem 1.25rem 0;
+}
+.site-title {
+  display: block;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 9vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-decoration: none;
+  max-width: 11ch;
+}
+.site-title:hover { text-decoration: none; }
+.is-inner .masthead-inner { padding-top: 1.75rem; }
+.is-inner .site-title { font-size: clamp(2rem, 6vw, 2.75rem); max-width: none; }
+.is-inner .site-nav ul { margin-top: 1.25rem; }
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(35, 31, 23, 0.35);
+}
+.site-nav a {
+  display: inline-block;
+  padding: 0.7rem 0 0.8rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.0625rem;
+  border-bottom: 3px solid transparent;
+}
+.site-nav a:hover { border-bottom-color: rgba(35, 31, 23, 0.45); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--ink); }
+
+/* ---------- Page body ---------- */
+
+.page-body {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4.5rem;
+}
+
+.page-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 6vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 2rem;
+  text-wrap: balance;
+}
+
+.sequence-position {
+  margin: 0 0 0.6rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+.sequence-position a { color: var(--ink-soft); text-decoration-color: rgba(86, 79, 64, 0.4); }
+
+/* the author's text */
+.prose > * { margin-top: 0; margin-bottom: 1.15em; }
+.prose h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+}
+.prose strong { font-weight: 700; }
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+}
+.prose p:has(> img:only-child),
+.prose p:has(> a:only-child > img) { margin: 0; }
+.prose hr {
+  border: 0;
+  height: 1px;
+  width: 5rem;
+  margin: 2.5rem 0;
+  background: var(--gold);
+}
+.prose ul, .prose ol { padding-left: 1.5em; }
+.prose li { margin-bottom: 0.5em; padding-left: 0.2em; }
+.prose ol > li::marker { color: var(--gold-deep); font-weight: 700; }
+
+/* ---------- Home ---------- */
+
+.home .prose img:first-child { margin-top: 0; }
+
+.contents {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--gold);
+}
+.contents h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 5vw, 2.4rem);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+}
+.contents h3 {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+}
+.contents h3 a { color: var(--ink); text-decoration: none; }
+.contents h3 a:hover { text-decoration: underline; }
+
+/* Numbered lists of essays and reading list items */
+.contents-list {
+  margin: 0;
+  padding-left: 2em;
+}
+.contents-list li {
+  margin: 0 0 0.55rem;
+  padding-left: 0.35em;
+}
+.contents-list li::marker {
+  font-family: var(--display);
+  color: var(--gold-deep);
+}
+
+/* ---------- Family notes ---------- */
+
+.family-note {
+  margin: 2.75rem 0 0;
+  padding: 1.25rem 1.5rem 0.25rem;
+  background: var(--gold-wash);
+  border-left: 4px solid var(--gold);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.family-note-label {
+  margin: 0 0 0.4rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.family-note p { margin: 0 0 1rem; }
+
+/* ---------- Previous and next ---------- */
+
+.sequence-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gold);
+}
+.sequence-nav a { text-decoration: none; display: block; }
+.sequence-next { text-align: right; }
+.sequence-label {
+  display: block;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.sequence-title {
+  display: block;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  color: var(--link);
+}
+.sequence-nav a:hover .sequence-title { text-decoration: underline; }
+
+@media (max-width: 34rem) {
+  .sequence-nav { grid-template-columns: 1fr; }
+  .sequence-nav > span:empty { display: none; }
+  .sequence-next { text-align: left; }
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--gold);
+  color: var(--ink);
+}
+.footer-inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 2rem;
+  font-size: 0.95rem;
+}
+.footer-inner p { margin: 0; }
+
+/* ---------- Printing (the author wanted to hand out printed essays) ---------- */
+
+@media print {
+  body { background: #fff; color: #000; font-size: 11.5pt; line-height: 1.55; }
+  .skip-link, .site-nav, .sequence-nav, .site-footer { display: none; }
+  .masthead { background: none; }
+  .masthead-inner { padding: 0; }
+  .site-title { font-size: 14pt; max-width: none; }
+  .page-body { max-width: none; padding: 0; }
+  .page-title { font-size: 24pt; margin-top: 12pt; }
+  a { color: #000; text-decoration: none; }
+  .prose img { max-height: 3.5in; width: auto; page-break-inside: avoid; }
+  .family-note { background: none; border-left: 2pt solid #999; }
+}

@@ -1,0 +1,76 @@
+# ============================================================
+#  SITE SETTINGS
+#  Safe to edit: change the words inside the quotes.
+#  After you save, the site updates in about 1 to 2 minutes.
+# ============================================================
+
+title: "Fundamentals of Liberty"
+description: "Fundamentals of Liberty will introduce you to Liberty, the core principle upon which America was founded."
+
+# The line at the bottom of every page.
+footer_text: "Fundamentals of Liberty. Restored in 2026 from archived copies of the original site."
+
+# The menu at the top of every page, in order.
+nav:
+  - title: "Home"
+    url: /
+  - title: "Essays"
+    url: /essays/
+  - title: "Reading List"
+    url: /reading-list/
+  - title: "About"
+    url: /about/
+
+# Groups of pages that are read in order.
+# "item_name" is used in labels such as "Essay 2 of 5" and "Next essay".
+sections:
+  essays:
+    title: "Essays"
+    url: /essays/
+    item_name: "essay"
+  reading-list:
+    title: "Reading List"
+    url: /reading-list/
+    item_name: "reading list item"
+
+# ============================================================
+#  TECHNICAL SETTINGS
+#  Do not change these without help. See AGENTS.md.
+# ============================================================
+
+url: "https://fundamentalsofliberty.com"
+lang: en
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: "essays"
+    values:
+      layout: sequence
+      section: essays
+  - scope:
+      path: "reading-list"
+    values:
+      layout: sequence
+      section: reading-list
+
+# Files that are for people and helpers, not for the website.
+exclude:
+  - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - STEWARDSHIP.md
+  - CONTENT-CHANGES.md
+  - guides/
+  - .pages.yml
+  - Gemfile
+  - Gemfile.lock
+  - vendor/

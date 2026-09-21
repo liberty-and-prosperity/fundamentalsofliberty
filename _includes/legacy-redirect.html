@@ -1,0 +1,14 @@
+{%- comment -%}
+  Sends visitors who use an old WordPress address (for example /?page_id=467)
+  to the new page. The list of old addresses is in _data/legacy_urls.yml.
+{%- endcomment -%}
+<script>
+  (function () {
+    var map = {{ site.data.legacy_urls | jsonify }};
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get("page_id");
+    if (id && map[id] && window.location.pathname === "/") {
+      window.location.replace(map[id]);
+    }
+  })();
+</script>

@@ -1,0 +1,17 @@
+# Old WordPress addresses and where they now point.
+# Search engines and other websites still link to the old addresses,
+# for example https://fundamentalsofliberty.com/?page_id=467
+# Format:  "old page_id number": /new/address/
+"261": /reading-list/
+"446": /reading-list/declaration-of-independence/
+"467": /reading-list/preamble-to-the-constitution/
+"477": /reading-list/five-books/
+"493": /reading-list/animal-farm-and-americas-ruling-class/
+"576": /essays/understanding-the-threat-to-liberty/
+"583": /essays/the-purpose-of-government/
+"596": /essays/entities-other-than-government/
+"600": /essays/our-interactions-with-government/
+"604": /essays/the-essence-of-liberty/
+"618": /essays/
+"732": /about/
+"814": /about/

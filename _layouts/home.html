@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="home">
+  <h1 class="visually-hidden">{{ site.title }}</h1>
+  <div class="prose">
+    {{ content }}
+  </div>
+  {% include family-note.html %}
+
+  <section class="contents" aria-labelledby="contents-heading">
+    <h2 id="contents-heading">Table of Contents</h2>
+    {%- for s in site.sections %}
+    {%- assign section_key = s[0] %}
+    <h3><a href="{{ s[1].url }}">{{ s[1].title }}</a></h3>
+    {% include section-list.html section=section_key %}
+    {%- endfor %}
+  </section>
+</article>

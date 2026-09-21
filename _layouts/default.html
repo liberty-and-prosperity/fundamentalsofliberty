@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.url == "/" %}
+  <title>{{ site.title }}</title>
+  {%- else %}
+  <title>{{ page.title | strip_html }} | {{ site.title }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page.title | default: site.title | strip_html }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/libre-caslon-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  {% include legacy-redirect.html %}
+</head>
+<body class="{% if page.layout == "home" %}is-home{% else %}is-inner{% endif %}">
+  <a class="skip-link" href="#main">Skip to the text</a>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="/">{{ site.title }}</a>
+      <nav class="site-nav" aria-label="Main menu">
+        <ul>
+          {%- for item in site.nav %}
+          {%- assign current = false %}
+          {%- if page.url == item.url %}{% assign current = true %}{% endif %}
+          {%- if item.url != "/" and page.url contains item.url %}{% assign current = true %}{% endif %}
+          <li><a href="{{ item.url }}"{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-body">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>{{ site.footer_text }}</p>
+    </div>
+  </footer>
+</body>
+</html>

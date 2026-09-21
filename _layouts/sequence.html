@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign section = site.sections[page.section] %}
+{%- assign items = site.pages | where: "section", page.section | where_exp: "p", "p.order != nil" | sort: "order" %}
+{%- for p in items %}
+  {%- if p.url == page.url %}
+    {%- assign position = forloop.index %}
+    {%- assign prev_index = forloop.index0 | minus: 1 %}
+    {%- assign next_index = forloop.index0 | plus: 1 %}
+  {%- endif %}
+{%- endfor %}
+<article>
+  <p class="sequence-position">
+    <a href="{{ section.url }}">{{ section.item_name | capitalize }} {{ position }} of {{ items.size }}</a>
+  </p>
+  <h1 class="page-title">{{ page.title }}</h1>
+  <div class="prose">
+    {{ content }}
+  </div>
+  {% include family-note.html %}
+
+  <nav class="sequence-nav" aria-label="{{ section.title }}">
+    {%- if prev_index >= 0 %}
+    {%- assign prev = items[prev_index] %}
+    <a class="sequence-prev" href="{{ prev.url }}">
+      <span class="sequence-label">Previous {{ section.item_name }}</span>
+      <span class="sequence-title">{{ prev.title }}</span>
+    </a>
+    {%- else %}
+    <span></span>
+    {%- endif %}
+    {%- if next_index < items.size %}
+    {%- assign next = items[next_index] %}
+    <a class="sequence-next" href="{{ next.url }}">
+      <span class="sequence-label">Next {{ section.item_name }}</span>
+      <span class="sequence-title">{{ next.title }}</span>
+    </a>
+    {%- endif %}
+  </nav>
+</article>

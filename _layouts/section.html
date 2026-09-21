@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article>
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if content != "" %}
+  <div class="prose">
+    {{ content }}
+  </div>
+  {%- endif %}
+  {% include section-list.html section=page.section %}
+  {% include family-note.html %}
+</article>

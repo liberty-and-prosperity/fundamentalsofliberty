@@ -1,0 +1,10 @@
+{%- comment -%}
+  Lists every page in one section, in "order".
+  Use: {% include section-list.html section="essays" %}
+{%- endcomment -%}
+{%- assign items = site.pages | where: "section", include.section | where_exp: "p", "p.order != nil" | sort: "order" %}
+<ol class="contents-list">
+  {%- for p in items %}
+  <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+  {%- endfor %}
+</ol>

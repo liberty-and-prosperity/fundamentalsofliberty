@@ -1,0 +1,137 @@
+# Settings for Pages CMS, an optional form-based editor.
+# This file does nothing until someone connects Pages CMS.
+# Instructions: guides/pages-cms.md
+
+media:
+  input: images
+  output: /images
+
+content:
+  - name: essays
+    label: Essays
+    type: collection
+    path: essays
+    format: yaml-frontmatter
+    exclude: [index.md]
+    filename: "{primary}.md"
+    view:
+      fields: [title, order]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: order
+        label: Position in the list
+        type: number
+        required: true
+        description: "1 is first. Give every essay a different number."
+        options:
+          min: 1
+      - name: family_note
+        label: Note from the family (optional)
+        type: rich-text
+        description: "Family additions go here, never inside the author's text."
+        options:
+          format: markdown
+          media: false
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: reading-list
+    label: Reading List
+    type: collection
+    path: reading-list
+    format: yaml-frontmatter
+    exclude: [index.md]
+    filename: "{primary}.md"
+    view:
+      fields: [title, order]
+      primary: title
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: order
+        label: Position in the list
+        type: number
+        required: true
+        description: "1 is first. Give every item a different number."
+        options:
+          min: 1
+      - name: family_note
+        label: Note from the family (optional)
+        type: rich-text
+        description: "Family additions go here, never inside the author's text."
+        options:
+          format: markdown
+          media: false
+      - name: body
+        label: Text
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: other-pages
+    label: Other pages
+    type: group
+    items:
+      - name: home
+        label: Home page
+        type: file
+        path: index.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: layout, type: string, hidden: true }
+          - { name: family_note, label: Note from the family (optional), type: rich-text, options: { format: markdown, media: false } }
+          - { name: body, label: Text, type: rich-text, options: { format: markdown } }
+      - name: about
+        label: About page
+        type: file
+        path: about.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: family_note, label: Note from the family (optional), type: rich-text, options: { format: markdown, media: false } }
+          - { name: body, label: Text, type: rich-text, options: { format: markdown } }
+      - name: essays-index
+        label: Essays (list page)
+        type: file
+        path: essays/index.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: layout, type: string, hidden: true }
+          - { name: section, type: string, hidden: true }
+          - { name: body, label: Text above the list (optional), type: rich-text, options: { format: markdown } }
+      - name: reading-list-index
+        label: Reading List (list page)
+        type: file
+        path: reading-list/index.md
+        format: yaml-frontmatter
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: layout, type: string, hidden: true }
+          - { name: section, type: string, hidden: true }
+          - { name: body, label: Text above the list (optional), type: rich-text, options: { format: markdown } }
+      - name: site-settings
+        label: Site settings (menu and footer)
+        type: file
+        path: _config.yml
+        format: code
+        options:
+          language: yaml
