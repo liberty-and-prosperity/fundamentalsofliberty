@@ -16,7 +16,7 @@ A small website usually dies for one of three reasons: the domain expires, nobod
 | What | Where | Account owner | Cost | Notes |
 |---|---|---|---|---|
 | Domain `fundamentalsofliberty.com` | GoDaddy | The author's original GoDaddy account (see to-do 2) | See GoDaddy | Auto-renew is on. Renews every 2 years, in December. |
-| Website hosting | GitHub Pages | GitHub organization _(fill in name)_ | Free | Publishes this repository. |
+| Website hosting | GitHub Pages | GitHub organization `liberty-and-prosperity` | Free | Publishes this repository. |
 | This repository | GitHub | Same organization | Free | Must stay public for free GitHub Pages. |
 | Private family archive | Shared family OneDrive folder | _(fill in)_ | Free | The author's Word documents and notes, plus the raw Wayback Machine download of the old site (`fundamentalsofliberty-archive.zip`). Contains old passwords. Keep it private, and outside GitHub. |
 | Optional editor | Pages CMS | Signs in with GitHub | Free | Not required. See `guides/pages-cms.md`. |
@@ -44,8 +44,8 @@ These records connect the domain to GitHub Pages. They are correct as of 2026. I
 | AAAA | @ | 2606:50c0:8001::153 |
 | AAAA | @ | 2606:50c0:8002::153 |
 | AAAA | @ | 2606:50c0:8003::153 |
-| CNAME | www | _(organization name)_.github.io |
-| TXT | _github-pages-challenge-_(organization name)_ | _(value from GitHub, see guides/go-live.md)_ |
+| CNAME | www | liberty-and-prosperity.github.io |
+| TXT | `_github-pages-challenge-liberty-and-prosperity` | _(value from GitHub, see guides/go-live.md)_ |
 
 Remove any other A, AAAA, or CNAME records for `@` and `www`. Do not add domain forwarding.
 
@@ -76,7 +76,7 @@ Do these steps together with the next steward.
 1. **Send renewal emails to 2 people.** GoDaddy sends renewal notices to the account's email address. Use an address that forwards to 2 people. **Do not use an address at fundamentalsofliberty.com.** If the domain expires, that address stops working exactly when you need it.
 2. **Move the domain to the steward's own GoDaddy account.** Not urgent while auto-renew works and you can sign in. Do it before a hand-off, or if the account ever asks for identity checks.
 3. **Verify the domain for the GitHub organization.** This stops other GitHub users from taking over the domain. See guides/go-live.md, step 7.
-4. **Check outside links once a year.** On 2026-09-16 every outside link was checked except the Amazon book links, and 4 were repaired (see CONTENT-CHANGES.md). Rule for a broken link: change only the link address to a page that serves the original purpose, keep the author's words, and log it. If no replacement exists, add a family note.
+4. **Check outside links once a year.** On 2026-09-21 every outside link was checked, including the 7 Amazon book links, and all of them work. Four links were repaired on 2026-09-16 (see CONTENT-CHANGES.md). Rule for a broken link: change only the link address to a page that serves the original purpose, keep the author's words, and log it. If no replacement exists, add a family note.
 5. **Review the pictures.** Most photos on the essays came from the internet in 2010, and their owners are unknown. The wanted poster on "The Purpose of Government" shows a real person's name and face. Decide whether to keep it or replace it with a similar public-domain picture, and log the decision in CONTENT-CHANGES.md.
 6. **Decide whether to name the author.** The original site never named him. Its footer said only "Fundamentals of Liberty" and "Proudly powered by WordPress." If the family decides to name him: change `footer_text` in `_config.yml`, add a family note on the About page if you want, update AGENTS.md rule 8, and log the decision in CONTENT-CHANGES.md.
 7. **Complete the private family archive.** Add `fundamentalsofliberty-archive.zip` (the raw Wayback Machine download) to the family OneDrive folder next to the Word documents. Confirm that at least 2 family members can open the folder. The Wayback Machine is not guaranteed to keep its copies forever, so this zip is the family's own backup of the original site, including the full Five Books page.
