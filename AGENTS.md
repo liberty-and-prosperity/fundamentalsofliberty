@@ -31,7 +31,7 @@ The people who ask you for help may not be technical. Explain what you will do, 
 - `_config.yml` `defaults` give every file in `essays/` and `reading-list/` the `sequence` layout. That layout adds "Essay 2 of 5" and previous and next links.
 - The home page and the two list pages build their lists from `order`. Nobody edits a table of contents by hand.
 - `_data/legacy_urls.yml` maps old WordPress `?page_id=` numbers to new addresses. `_includes/legacy-redirect.html` does the redirect.
-- Fonts are in `assets/fonts/` (Libre Caslon, SIL Open Font License). Colors and sizes are in `assets/css/site.css`. The gold `#AA9B55` is the author's original background color. Keep it.
+- The type is Georgia, the face the author used throughout the original site. The site loads no font files. Colors and sizes are in `assets/css/site.css`. The gold `#AA9B55` is the author's original background color. Keep it.
 - `.pages.yml` configures Pages CMS, an optional form-based editor. If you add a front matter field, add it to `.pages.yml` too, or Pages CMS may drop it.
 
 ## Recipes

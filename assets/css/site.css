@@ -1,30 +1,10 @@
 /* ==========================================================
    Fundamentals of Liberty: site styles
    Colors and fonts are set once, in the :root block below.
+   The type is Georgia, the face the author used on the original site.
    The gold (#AA9B55) is the background color the author chose for
    the original site in January 2011.
    ========================================================== */
-
-@font-face {
-  font-family: "Libre Caslon Text";
-  src: url("../fonts/libre-caslon-text-latin-400-normal.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Libre Caslon Text";
-  src: url("../fonts/libre-caslon-text-latin-400-italic.woff2") format("woff2");
-  font-weight: 400; font-style: italic; font-display: swap;
-}
-@font-face {
-  font-family: "Libre Caslon Text";
-  src: url("../fonts/libre-caslon-text-latin-700-normal.woff2") format("woff2");
-  font-weight: 700; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Libre Caslon Display";
-  src: url("../fonts/libre-caslon-display-latin-400-normal.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
-}
 
 :root {
   --gold: #AA9B55;        /* the author's color */
@@ -35,8 +15,13 @@
   --ink-soft: #564F40;
   --link: #8C1C13;        /* the red of the original links, darkened for reading */
 
-  --text: "Libre Caslon Text", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --display: "Libre Caslon Display", "Libre Caslon Text", "Palatino Linotype", Palatino, Georgia, serif;
+  /* Georgia is the face the author chose himself, on every page of the
+     original site. Matthew Carter drew it for reading on screens: large
+     x-height, low stroke contrast, sturdy stems. It ships with Windows and
+     macOS, so the site downloads no fonts at all. The fallbacks cover
+     Android and Linux, where Georgia is absent. */
+  --text: Georgia, "Noto Serif", "DejaVu Serif", serif;
+  --display: Georgia, "Noto Serif", "DejaVu Serif", serif;
 
   --measure: 37rem;
 }
@@ -108,9 +93,8 @@ a:hover { text-decoration-thickness: 2px; }
   display: block;
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(2.5rem, 9vw, 4.25rem);
-  line-height: 0.98;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.35rem, 8.5vw, 3.9rem);
+  line-height: 1.05;
   color: var(--ink);
   text-decoration: none;
   max-width: 11ch;
@@ -151,9 +135,8 @@ a:hover { text-decoration-thickness: 2px; }
 .page-title {
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(2.1rem, 6vw, 2.9rem);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.95rem, 5.6vw, 2.6rem);
+  line-height: 1.15;
   margin: 0 0 2rem;
   text-wrap: balance;
 }

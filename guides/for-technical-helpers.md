@@ -5,7 +5,7 @@ Read AGENTS.md first. The main constraint: a non-technical person must be able t
 ## Architecture
 
 - Static site. Jekyll, built by GitHub Pages on each push to `main`. GitHub Pages uses Jekyll 3.10 with kramdown (GFM input).
-- No plugins beyond GitHub Pages defaults. No theme gem. No JavaScript apart from the legacy redirect. No external requests: fonts are self-hosted.
+- No plugins beyond GitHub Pages defaults. No theme gem. No JavaScript apart from the legacy redirect. No external requests, and no font files: the type is Georgia, which ships with Windows and macOS.
 - Plain CSS, no Sass.
 
 ## File map
@@ -21,7 +21,6 @@ _includes/section-list.html ordered list of a section's pages (by front matter "
 _includes/family-note.html  renders page.family_note
 _includes/legacy-redirect.html  ?page_id=N redirect, map in _data/legacy_urls.yml
 assets/css/site.css         all styles (tokens in :root)
-assets/fonts/               Libre Caslon Text and Display, woff2, OFL
 images/                     all content images
 CNAME                       custom domain for GitHub Pages (keep it)
 .pages.yml                  Pages CMS schema (optional editor)
@@ -80,7 +79,8 @@ To build the site without starting a server, use `bundle exec jekyll build`. It 
 ## Design notes
 
 - Palette: the author's gold `#AA9B55` (the background he chose in January 2011), ink `#231F17`, paper `#FFFDF7`, link red `#8C1C13` (his original link color, darkened for contrast).
-- Type: Libre Caslon. Caslon was the typeface of the first printed Declaration of Independence. Display cut for titles, Text cut for reading.
+- Type: Georgia, at 18px with line-height 1.7. The author chose Georgia himself. He set `font-family: georgia,palatino` by hand throughout the original site, overriding his WordPress theme. Matthew Carter drew Georgia in 1996 for reading on screens: large x-height, low stroke contrast, sturdy stems. The site loads no font files, so there is nothing to download and nothing to break.
+- The site used Libre Caslon until 2026-09-22. It was chosen on historical grounds and read too thin on screen. Readability wins over period flavor here. See CONTENT-CHANGES.md.
 - One column, about 37rem wide, left-aligned.
 - Print styles hide navigation, so essays print cleanly. The author planned to hand out printed essays.
 

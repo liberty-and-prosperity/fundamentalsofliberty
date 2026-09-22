@@ -7,6 +7,15 @@ Add the newest change at the top. Use this form:
 
 ---
 
+## 2026-09-22 | whole site | Typeface changed to Georgia
+
+- The site now uses Georgia for everything. It previously used Libre Caslon, which was picked during the restoration on historical grounds and read too thin on screen.
+- The author chose Georgia himself. The 2016 Wayback Machine copy of the Five Books page sets `font-family: georgia,palatino` twenty times, by hand, overriding his WordPress theme. He also set `font-size: medium` for body text.
+- Georgia was drawn for reading on screens. It has a large x-height, low contrast between thick and thin strokes, and sturdy stems.
+- The four Libre Caslon font files were deleted, about 100 KB. The site now downloads no fonts at all.
+- No color changed. Every text color was measured and passes WCAG AA, most pass AAA.
+- No word of the author's text changed. Asked by the owner.
+
 ## 2026-09-22 | Five Books | Note wording shortened
 
 - Changed the last words of the note from "still shows the interview as the author presented it" to "still shows the full interview". The links did not change. Asked by the owner.
