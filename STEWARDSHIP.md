@@ -45,7 +45,7 @@ These records connect the domain to GitHub Pages. They are correct as of 2026. I
 | AAAA | @ | 2606:50c0:8002::153 |
 | AAAA | @ | 2606:50c0:8003::153 |
 | CNAME | www | liberty-and-prosperity.github.io |
-| TXT | `_github-pages-challenge-liberty-and-prosperity` | _(value from GitHub, see guides/go-live.md)_ |
+| TXT | `_github-pages-challenge-liberty-and-prosperity` | Added 2026-09-21. GitHub shows the value under the organization's Settings > Pages. |
 
 Remove any other A, AAAA, or CNAME records for `@` and `www`. Do not add domain forwarding.
 
@@ -75,7 +75,7 @@ Do these steps together with the next steward.
 
 1. **Send renewal emails to 2 people.** GoDaddy sends renewal notices to the account's email address. Use an address that forwards to 2 people. **Do not use an address at fundamentalsofliberty.com.** If the domain expires, that address stops working exactly when you need it.
 2. **Move the domain to the steward's own GoDaddy account.** Not urgent while auto-renew works and you can sign in. Do it before a hand-off, or if the account ever asks for identity checks.
-3. **Verify the domain for the GitHub organization.** This stops other GitHub users from taking over the domain. See guides/go-live.md, step 7.
+3. ~~Verify the domain for the GitHub organization.~~ Done on 2026-09-21. GitHub reports the domain as verified, which stops other GitHub users from taking it over.
 4. **Check outside links once a year.** On 2026-09-21 every outside link was checked, including the 7 Amazon book links, and all of them work. Four links were repaired on 2026-09-16 (see CONTENT-CHANGES.md). Rule for a broken link: change only the link address to a page that serves the original purpose, keep the author's words, and log it. If no replacement exists, add a family note.
 5. **Review the pictures.** Most photos on the essays came from the internet in 2010, and their owners are unknown. On 2026-09-21 the owner decided to keep the wanted poster on "The Purpose of Government" as it is (logged in CONTENT-CHANGES.md). The other pictures have not been reviewed.
 6. **Decide whether to name the author.** The original site never named him. Its footer said only "Fundamentals of Liberty" and "Proudly powered by WordPress." If the family decides to name him: change `footer_text` in `_config.yml`, add a family note on the About page if you want, update AGENTS.md rule 8, and log the decision in CONTENT-CHANGES.md.

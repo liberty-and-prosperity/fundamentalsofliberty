@@ -17,7 +17,8 @@ The people who ask you for help may not be technical. Explain what you will do, 
 6. **Keep every old address working.** Do not rename or move a page file unless the owner asks. If a page moves, add the old address to `_data/legacy_urls.yml`, and tell the owner.
 7. **Update the docs** (`README.md`, `STEWARDSHIP.md`, `guides/`) when you change how something works.
 8. **Do not publish the author's name** on the site or in this repository unless STEWARDSHIP.md records that the family decided to. The original site never named him.
-9. **Prefer small changes.** One task, one commit, with a clear commit message.
+9. **Commit as the site, not as a person.** Every commit must be authored `Fundamentals of Liberty <noreply@fundamentalsofliberty.com>`. The repository's own git config sets this, so a fresh clone will quietly use the person's own name and email instead. Check with `git log --format="%an <%ae>"` after you commit. Changing the custom domain in GitHub's Pages settings also writes a commit, authored by whoever is signed in.
+10. **Prefer small changes.** One task, one commit, with a clear commit message.
 
 ## How the site works
 

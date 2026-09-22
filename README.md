@@ -8,9 +8,11 @@ This folder is the complete website **fundamentalsofliberty.com**.
 
 ## The three rules
 
-1. **The author's words stay as he wrote them.** Do not fix his spelling, punctuation, or opinions.
-2. **Family additions go in a "family note."** A family note shows in a shaded box labeled NOTE, so it stays separate from the author's words. See [guides/editing-content.md](guides/editing-content.md).
+1. **Do not change the author's words.** Change them only when the owner asks for that exact change.
+2. **Write down every change** in [CONTENT-CHANGES.md](CONTENT-CHANGES.md). It is the site's record of what changed and why.
 3. **Keep the domain name paid.** A forgotten renewal is the most likely way to lose the site. See [STEWARDSHIP.md](STEWARDSHIP.md).
+
+To add something of your own, put it in a note. A note appears in its own shaded box, labeled NOTE, below the author's text. Two pages have one today: About and Five Books. See [guides/editing-content.md](guides/editing-content.md).
 
 ## Where things are
 

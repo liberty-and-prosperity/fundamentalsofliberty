@@ -34,40 +34,39 @@ CNAME                       custom domain for GitHub Pages (keep it)
 - `permalink: pretty`. Addresses are `/folder/file-name/`. File names are part of the public URL, so do not rename files.
 - Internal links in content are root-relative (`/essays/...`). This works because the site runs on the apex custom domain. If the site ever runs under a sub-path (for example `ORG.github.io/fundamentalsofliberty/` with no custom domain), internal links will break. Keep the custom domain.
 
-## Preview locally (pwsh)
+## Preview locally (Windows, pwsh)
 
-Option 1, Docker (no Ruby install):
+These steps were run on Windows 11 on 2026-09-21.
 
-```powershell
-cd path\to\fundamentalsofliberty
-docker run --rm -it -p 4000:4000 -v "${PWD}:/site" -w /site ruby:3.3 `
-  bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0"
-```
+1. Install Ruby with the DevKit from https://rubyinstaller.org. Choose **Ruby 3.3**. Do not use Ruby 3.4. The `github-pages` gem pins Jekyll 3.10, which does not run on it.
 
-Then open http://localhost:4000. The first run takes a few minutes.
+2. Open a **new** PowerShell window, so that it sees the new Ruby. Go to the repository:
 
-Option 2, Ruby on Windows: install Ruby+Devkit from https://rubyinstaller.org. Use **Ruby 3.3**. The `github-pages` gem pins Jekyll 3.10, which does not run on Ruby 3.4.
+   ```powershell
+   cd path\to\fundamentalsofliberty
+   ```
 
-```powershell
-cd path\to\fundamentalsofliberty
-bundle install
-bundle exec jekyll serve
-```
+3. Only if the computer has more than one Ruby, put the one you want first. This lasts for that window only:
 
-Then open http://127.0.0.1:4000 in a browser. Press Ctrl+C in that window to stop the server.
+   ```powershell
+   $env:Path = "C:\Ruby33-x64\bin;$env:Path"
+   ```
 
-Notes from a setup that worked (Windows 11, Ruby 3.3.12, 2026-09-21):
+4. Install the gems. The first run takes about 15 minutes and prints nothing while it works out which gems it needs. This is normal. Later runs take seconds.
 
-- The first `bundle install` took about 15 minutes and printed nothing while it worked out which gems it needed. This is normal. Later runs take seconds.
-- If the computer has more than one Ruby, put the one you want first, for that window only:
+   ```powershell
+   bundle install
+   ```
 
-```powershell
-$env:Path = "C:\Ruby33-x64\bin;$env:Path"
-```
+5. Start the site:
 
-- `bundle exec jekyll build` writes the finished site to `_site`. Git ignores that folder.
+   ```powershell
+   bundle exec jekyll serve
+   ```
 
-`Gemfile` pins the `github-pages` gem so the local build matches GitHub.
+6. Open http://127.0.0.1:4000 in a browser. Press Ctrl+C in the PowerShell window to stop it.
+
+To build the site without starting a server, use `bundle exec jekyll build`. It writes to `_site`, which git ignores. The `Gemfile` pins the `github-pages` gem so the local build matches GitHub.
 
 ## Before you push
 

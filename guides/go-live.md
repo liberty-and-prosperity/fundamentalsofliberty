@@ -1,6 +1,8 @@
 # Put the site online
 
-Follow these steps once, to publish the site on GitHub Pages and point the domain to it. Use the same steps to move the site to a new GitHub organization.
+**This was done on 2026-09-21. The site is live.** Keep this guide for moving the site to a new GitHub organization, or for setting it up again from scratch.
+
+Follow these steps once, to publish the site on GitHub Pages and point the domain to it.
 
 In the steps, `ORG` means the name of your GitHub organization.
 
@@ -73,8 +75,10 @@ This stops anyone else on GitHub from using the domain.
 
 ## 8. Check the live site
 
-- [ ] https://fundamentalsofliberty.com loads with a lock icon.
-- [ ] https://www.fundamentalsofliberty.com goes to the same site.
-- [ ] Every menu link works.
-- [ ] An old address works: https://fundamentalsofliberty.com/?page_id=467 opens "Preamble to the Constitution."
-- [ ] Update the Accounts table in STEWARDSHIP.md.
+- [x] https://fundamentalsofliberty.com loads with a lock icon.
+- [x] https://www.fundamentalsofliberty.com goes to the same site.
+- [x] Every menu link works.
+- [x] An old address works: https://fundamentalsofliberty.com/?page_id=467 opens "Preamble to the Constitution."
+- [x] Update the Accounts table in STEWARDSHIP.md.
+
+All five were checked on 2026-09-21.
