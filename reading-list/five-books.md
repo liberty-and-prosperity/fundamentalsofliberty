@@ -2,7 +2,7 @@
 title: "Five Books"
 order: 4
 family_note: >-
-  You can read Governor Daniels’ full interview at [Five Books](https://fivebooks.com/best-books/mitch-daniels-on-how-libertarians-can-govern/). If that link ever stops working, this [archived copy of the original page on this site](https://web.archive.org/web/20161023162700/http://fundamentalsofliberty.com/?page_id=477) still shows the interview as the author presented it.
+  You can read Governor Daniels’ full interview at [Five Books](https://fivebooks.com/best-books/mitch-daniels-on-how-libertarians-can-govern/). If that link ever stops working, this [archived copy of the original page on this site](https://web.archive.org/web/20161023162700/http://fundamentalsofliberty.com/?page_id=477) still shows the full interview.
 ---
 
 (Check out this compelling 4 minute video [Choose Liberty](https://vimeo.com/45163865))

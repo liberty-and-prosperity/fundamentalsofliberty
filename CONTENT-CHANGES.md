@@ -7,6 +7,11 @@ Add the newest change at the top. Use this form:
 
 ---
 
+## 2026-09-22 | Five Books | Note wording shortened
+
+- Changed the last words of the note from "still shows the interview as the author presented it" to "still shows the full interview". The links did not change. Asked by the owner.
+- The author's words were not changed.
+
 ## 2026-09-21 | Five Books, The Purpose of Government | Interview title restored, note shortened, poster kept
 
 - Five Books: restored the author's section title, "The “Five Books” Interview with Governor Mitch Daniels", and the separator line above it. Both appear in the 2016-10-23 Wayback Machine copy, below the list of five books. The interview text itself stays out, for copyright. Asked by the owner.
