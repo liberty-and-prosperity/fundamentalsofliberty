@@ -41,21 +41,26 @@ In the steps, `ORG` means the name of your GitHub organization.
 2. In **Settings > Pages**, confirm that **Custom domain** shows `fundamentalsofliberty.com`. If it is empty, type it and click **Save**.
 3. Until the DNS change in step 6 is done, the site will not load. This is normal.
 
-## 5. Disconnect GoDaddy Website Builder
+## 5. Disconnect the GoDaddy placeholder page
 
-The domain currently shows a free GoDaddy Website Builder "coming soon" page. That page can keep its own DNS records.
+The domain shows a GoDaddy "coming soon" page. On 2026-09-21 this turned out to be GoDaddy's parked-domain page, not a Websites + Marketing site. Its editor has no unpublish button, because there is no site to unpublish. The placeholder disappears by itself when you change the A record in step 6.
 
-1. Sign in to GoDaddy. Open the Website Builder site for the domain.
-2. Unpublish or delete the site, or disconnect the domain from it.
-3. Make sure domain forwarding is off for the domain.
+1. Do not click **Publish** or **Make the switch to a full website** in that editor. Either one can turn a parked domain into a real Website Builder site, which then does hold on to the DNS records.
+2. Open the **Forwarding** tab for the domain and make sure nothing is set.
 
 ## 6. Change the DNS records at GoDaddy
 
 1. In GoDaddy, open **My Products**. Next to the domain, open **DNS**.
-2. Delete the existing A and AAAA records for `@`, and the CNAME record for `www`.
+2. Delete the existing A and AAAA records for `@`, and change the CNAME record for `www`. GoDaddy may show the apex `A` record with the value `WebsiteBuilder Site` instead of an address. That single row is the one to change.
 3. Add the records in the table in [STEWARDSHIP.md](../STEWARDSHIP.md), section "DNS settings at GoDaddy."
 4. Wait. Most changes work in under an hour. Some take up to 24 hours.
 5. In GitHub **Settings > Pages**, wait for the DNS check to pass. Then tick **Enforce HTTPS**.
+
+**If the certificate never appears.** GitHub sometimes does not start the request at all. If the DNS check passes but no certificate appears after about 30 minutes, remove the custom domain, save, then type it in again and save. The certificate usually arrives within a minute.
+
+> **Before you do that, read this.** Changing the custom domain makes GitHub commit the `CNAME` file to the repository, and it authors that commit as whoever is signed in. That puts a GitHub username into the public history, which works against AGENTS.md rule 8. Check the history afterwards, and clean it up if it matters to the family.
+
+**If your own browser refuses to open the site** and shows a certificate warning you cannot click past, that is HSTS, not a broken site. The old GoDaddy page told your browser to use https only for this domain, for two years. Either wait for the certificate, or clear the entry at `chrome://net-internals/#hsts`.
 
 ## 7. Verify the domain for the organization
 
