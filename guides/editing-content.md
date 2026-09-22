@@ -27,7 +27,7 @@ A: Government has a legal monopoly on the use of coercive violence.
 
 ## Add or change a family note
 
-A family note shows in a shaded box labeled "Note from the family." Use it to add context, a working link, or a correction, without touching the author's words.
+A family note shows in a shaded box labeled "NOTE." Use it to add context, a working link, or a correction, without touching the author's words. The box keeps your words separate from the author's.
 
 1. Open the page file on github.com. Click the pencil icon.
 2. Add these lines inside the front matter, just above the second `---`:
