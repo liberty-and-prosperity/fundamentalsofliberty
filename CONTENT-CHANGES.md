@@ -7,6 +7,14 @@ Add the newest change at the top. Use this form:
 
 ---
 
+## 2026-09-21 | Five Books, The Purpose of Government | Interview title restored, note shortened, poster kept
+
+- Five Books: restored the author's section title, "The “Five Books” Interview with Governor Mitch Daniels", and the separator line above it. Both appear in the 2016-10-23 Wayback Machine copy, below the list of five books. The interview text itself stays out, for copyright. Asked by the owner.
+- Five Books: shortened the note. Removed the opening words "Good news: the interview is online again." The links did not change. Asked by the owner.
+- The Purpose of Government: the wanted poster picture stays as it is. Decided by the owner on 2026-09-21. This settles the question raised in STEWARDSHIP.md to-do 5.
+- Outside links: every outside link was checked on 2026-09-21, including the 7 Amazon book links that were not checked on 2026-09-16. All of them work, and each Amazon link opens the edition the author named. Nothing changed.
+- The author's words were not changed.
+
 ## 2026-09-16 | several pages | Outside links checked and repaired
 
 - Checked in a browser on 2026-09-16. Only the link addresses changed. The linked words did not change.

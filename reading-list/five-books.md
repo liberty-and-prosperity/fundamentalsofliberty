@@ -2,7 +2,7 @@
 title: "Five Books"
 order: 4
 family_note: >-
-  Good news: the interview is online again. You can read Governor Daniels’ full interview at [Five Books](https://fivebooks.com/best-books/mitch-daniels-on-how-libertarians-can-govern/). If that link ever stops working, this [archived copy of the original page on this site](https://web.archive.org/web/20161023162700/http://fundamentalsofliberty.com/?page_id=477) still shows the interview as the author presented it.
+  You can read Governor Daniels’ full interview at [Five Books](https://fivebooks.com/best-books/mitch-daniels-on-how-libertarians-can-govern/). If that link ever stops working, this [archived copy of the original page on this site](https://web.archive.org/web/20161023162700/http://fundamentalsofliberty.com/?page_id=477) still shows the interview as the author presented it.
 ---
 
 (Check out this compelling 4 minute video [Choose Liberty](https://vimeo.com/45163865))
@@ -24,3 +24,7 @@ This edition includes an intro by Milton Friedman as well as prefaces to the thr
 - [*What It Means to Be a Libertarian*](https://www.amazon.com/dp/0767900391) by Charles Murray
 - [*The Rise and Decline of Nations*](https://www.amazon.com/dp/0300030797) by Mancur Olson
 - [*The Future and Its Enemies*](https://www.amazon.com/dp/0684862697) by Virginia Postrel
+
+------------------------------------------------------------------------
+
+## The “Five Books” Interview with Governor Mitch Daniels
