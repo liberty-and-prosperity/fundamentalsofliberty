@@ -46,13 +46,26 @@ docker run --rm -it -p 4000:4000 -v "${PWD}:/site" -w /site ruby:3.3 `
 
 Then open http://localhost:4000. The first run takes a few minutes.
 
-Option 2, Ruby on Windows: install Ruby+Devkit from https://rubyinstaller.org, then:
+Option 2, Ruby on Windows: install Ruby+Devkit from https://rubyinstaller.org. Use **Ruby 3.3**. The `github-pages` gem pins Jekyll 3.10, which does not run on Ruby 3.4.
 
 ```powershell
 cd path\to\fundamentalsofliberty
 bundle install
 bundle exec jekyll serve
 ```
+
+Then open http://127.0.0.1:4000 in a browser. Press Ctrl+C in that window to stop the server.
+
+Notes from a setup that worked (Windows 11, Ruby 3.3.12, 2026-09-21):
+
+- The first `bundle install` took about 15 minutes and printed nothing while it worked out which gems it needed. This is normal. Later runs take seconds.
+- If the computer has more than one Ruby, put the one you want first, for that window only:
+
+```powershell
+$env:Path = "C:\Ruby33-x64\bin;$env:Path"
+```
+
+- `bundle exec jekyll build` writes the finished site to `_site`. Git ignores that folder.
 
 `Gemfile` pins the `github-pages` gem so the local build matches GitHub.
 
